@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Create";
+
+    //Could add razor validation here
 }
 
 <h1>Create</h1>
@@ -23,21 +25,21 @@
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                    <label asp-for="Genre">Genre</label>
-                    <select asp-for="Genre" class="form-select" id="Genre">
-                        <option>Rom Com</option>
-                        <option>Sci-Fi</option>
-                        <option>Drama</option>
-                        <option>Horror</option>
-                        <option>Documentary</option>
-                    </select>
+                <label asp-for="Genre">Genre</label>
+                <select asp-for="Genre" class="form-select" id="Genre">
+                    <option>Rom Com</option>
+                    <option>Sci-Fi</option>
+                    <option>Drama</option>
+                    <option>Horror</option>
+                    <option>Documentary</option>
+                </select>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="Year" class="control-label"></label>
                 <input asp-for="Year" class="form-control" />
                 <span asp-validation-for="Year" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            </div>*@
+            @*<div class="form-group">
                 <label asp-for="Actors" class="control-label"></label>
                 <input asp-for="Actors" class="form-control" />
                 <span asp-validation-for="Actors" class="text-danger"></span>
@@ -46,7 +48,17 @@
                 <label asp-for="Directors" class="control-label"></label>
                 <input asp-for="Directors" class="form-control" />
                 <span asp-validation-for="Directors" class="text-danger"></span>
+            </div>*@
+            @*<div class="form-group">
+                <label asp-for="Actors" class="control-label"></label>
+                <input asp-for="Actors" class="form-control" />
+                <span asp-validation-for="Actors" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="Directors" class="control-label"></label>
+                <input asp-for="Directors" class="form-control" />
+                <span asp-validation-for="Directors" class="text-danger"></span>
+            </div>*@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

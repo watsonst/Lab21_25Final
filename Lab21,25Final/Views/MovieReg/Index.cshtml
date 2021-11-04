@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+    var movie = ViewData["movie"] as Movie;
 }
 
 <h1>Movie Registration</h1>
@@ -9,6 +10,7 @@
 
 <p>
     <a asp-action="Create">Create New</a>
+    @*@Html.ActionLink("Go to Registration Page", "Registration")*@
 </p>
 <table class="table">
     <thead>
@@ -22,7 +24,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Genre)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Year)
             </th>
             <th>
@@ -30,32 +32,67 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Directors)
-            </th>
+            </th>*@
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Year)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Actors)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Directors)
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Actors)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Directors)
+                </td>*@
+            </tr>
+        }
     </tbody>
 </table>
+
+
+@*@{
+    ViewData["Title"] = "Index";
+    var movie = ViewData["movie"] as Movie;
+}
+
+<h1>Moive @movie.Title was registered</h1>
+<br/>
+<h4>ID: @movie.Id</h4>
+<h4>ID: @movie.Title</h4>
+<h4>ID: @movie.Genre</h4>
+<h4>ID: @movie.Year</h4>
+
+
+<h4>ID: @movie.Actors</h4>
+<ul>
+    @{
+        for (int i = 0; i < movie.Actors.Count; i++)
+        {
+                <li>@moive.Actors[i]</li>
+            }
+    }
+</ul>
+
+<h4>ID: @movie.Directors</h4>
+<ul>
+    @{
+        for (int i = 0; i < movie.Actors.Count; i++)
+        {
+            <li>@moive.Actors[i]</li>
+        }
+    }
+</ul>*@

@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Lab21_25Final.Data;
 
 namespace Lab21_25Final
 {
@@ -24,6 +26,9 @@ namespace Lab21_25Final
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<Lab21_25FinalContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("Lab21_25FinalContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +55,7 @@ namespace Lab21_25Final
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=MovieReg}/{action=Index}/{id?}");
+                    pattern: "{controller=Movies}/{action=Index}/{id?}");
             });
         }
     }
